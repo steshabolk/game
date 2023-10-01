@@ -1,0 +1,47 @@
+@mixin highlight-text-shadow($highlight: $pink, $shadow: $red) {
+	text-shadow: 0.1rem 0.1rem 0.1rem $shadow, 0 0 0.5rem $highlight, 0 0 0.5rem $highlight;
+}
+
+@mixin letter-spacing($spacing, $margin-left: calc($spacing / 2)) {
+	letter-spacing: $spacing;
+	padding-left: $margin-left;
+}
+
+.inline {
+	@include flex($flex-direction: row, $flex-wrap: nowrap, $justify-content: center, $align-items: center);
+	margin: auto;
+	width: fit-content;
+	.svg-icon {
+		width: 1.5rem;
+	}
+	.main-btn {
+		padding: 0.1rem 0.2rem;
+	}
+}
+.par {
+	@include letter-spacing(0.2rem);
+	@include highlight-text-shadow();
+	text-align: center;
+	text-transform: uppercase;
+}
+.text {
+	@include main-transition($duration: 0.2s);
+	font-size: 0.8rem;
+	color: rgba($mainFontColor, 0.8);
+}
+.text-pink-red {
+	@include main-transition($duration: 0.2s);
+	@include highlight-text-shadow();
+}
+.text-purple-blue {
+	@include main-transition($duration: 0.2s);
+	@include highlight-text-shadow($highlight: $purple, $shadow: $blue);
+}
+.text-purple-pink {
+	@include main-transition($duration: 0.2s);
+	@include highlight-text-shadow($highlight: $purple, $shadow: $pink);
+}
+.text-yellow-red {
+	@include main-transition($duration: 0.2s);
+	@include highlight-text-shadow($highlight: $orange, $shadow: $red);
+}

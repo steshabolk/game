@@ -1,0 +1,38 @@
+@mixin main-btn() {
+	-webkit-user-select: none;
+	user-select: none;
+	@include main-transition($duration: 0.1s);
+	display: block;
+	padding: 0.2rem 0.4rem;
+	margin: 0.3rem auto;
+	border: 0.1rem solid transparent;
+	background: linear-gradient($dark-1, $dark-1) padding-box,
+		linear-gradient(130deg, rgba($purple, 1) 0%, rgba($red, 1) 50%, rgba($yellow, 1) 100%) border-box;
+	border-radius: 0.5rem;
+	font-family: $headerFont;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.main-btn {
+	@include main-btn();
+	@include main-transition($duration: 0.1s);
+	&:active {
+		@include main-transition($duration: 0.1s);
+		transform: scale(0.95);
+	}
+}
+.gr-purple-pink {
+	background: linear-gradient($dark-1, $dark-1) padding-box, linear-gradient(130deg, rgba($purple, 1) 0%, rgba($pink, 1) 100%) border-box;
+}
+.gr-purple-blue {
+	background: linear-gradient($dark-1, $dark-1) padding-box,
+		linear-gradient(130deg, rgba($purple, 1) 0%, rgba($blue, 1) 50%, rgba($cyan, 1) 100%) border-box;
+}
+.btn-disable {
+	cursor: default;
+	opacity: 0.7;
+	&:active {
+		transform: none !important;
+	}
+}

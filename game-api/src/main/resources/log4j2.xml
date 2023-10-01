@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <!-- Appender for logging to console output  -->
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false" pattern="%style{%m}{magenta}%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="OFF">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+        <Logger name="com.task.game" level="INFO" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>

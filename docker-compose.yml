@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: api
+    image: steshabolk/game-api
+    restart: always
+    ports:
+      - '8085:8085'
+    environment:
+      TZ: Europe/Moscow
+      FRONTEND_PORT: 8088
+
+  frontend:
+    container_name: frontend
+    image: steshabolk/game-frontend
+    restart: always
+    ports:
+      - '8088:8088'
+    depends_on:
+      - api

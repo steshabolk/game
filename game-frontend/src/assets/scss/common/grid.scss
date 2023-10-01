@@ -1,0 +1,36 @@
+$gridGap: 1rem;
+
+// RESPONSIVE GRID
+.grid {
+	// border: 2px solid magenta;
+	@include flex($flex-direction: row, $justify-content: center);
+	gap: $gridGap;
+}
+
+.grid-column {
+	@include main-transition($duration: 0.2s);
+	@include flex($flex-direction: column, $justify-content: center);
+	gap: $gridGap;
+	// border: 2px solid skyblue;
+}
+
+@include min-screen($tabletWidth) {
+	.grid-w {
+		width: 30%;
+	}
+}
+
+@include max-screen($tabletWidth) {
+	.grid-col {
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: center;
+	}
+	.grid-center {
+		justify-content: center;
+	}
+	.grid-row {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}

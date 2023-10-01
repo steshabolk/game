@@ -1,0 +1,59 @@
+// MAIN FLEX
+@mixin flex($flex-direction: false, $flex-wrap: false, $justify-content: false, $align-items: false, $align-content: false, $text-align: false) {
+	display: flex;
+	@if $flex-direction != false {
+		flex-direction: $flex-direction;
+	}
+	@if $flex-wrap != false {
+		flex-wrap: $flex-wrap;
+	}
+	@if $justify-content != false {
+		justify-content: $justify-content;
+	}
+	@if $align-items != false {
+		align-items: $align-items;
+	}
+	@if $align-content != false {
+		align-content: $align-content;
+	}
+	@if $text-align != false {
+		text-align: $text-align;
+	}
+}
+
+// TRANSITION
+@mixin main-transition($property: all, $duration: 0.4s, $ease: ease-in-out) {
+	transition: $property $duration $ease;
+}
+
+// SVG ICON
+.svg-icon {
+	width: 100%;
+	height: 100%;
+	min-width: 1rem;
+	min-height: 1rem;
+	max-width: 5rem;
+	max-height: 5rem;
+	display: block;
+	fill: currentColor;
+	color: rgba($mainFontColor, 0.8);
+	&__disable {
+		color: rgba($mainFontColor, 0.4);
+		cursor: default !important;
+		&:hover {
+			color: rgba($mainFontColor, 0.4) !important;
+		}
+	}
+}
+.icon-purple-pink {
+	@include main-transition($duration: 0.2s);
+	fill: url(#purple-pink);
+}
+.icon-purple-blue {
+	@include main-transition($duration: 0.2s);
+	fill: url(#purple-blue);
+}
+.icon-yellow-red {
+	@include main-transition($duration: 0.2s);
+	fill: url(#yellow-red);
+}
