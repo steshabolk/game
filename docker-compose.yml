@@ -3,7 +3,7 @@ version: '3.9'
 services:
   api:
     container_name: api
-    image: steshabolk/game-api
+    build: ./game-api
     restart: always
     ports:
       - '8085:8085'
@@ -13,7 +13,7 @@ services:
 
   frontend:
     container_name: frontend
-    image: steshabolk/game-frontend
+    build: ./game-frontend
     restart: always
     ports:
       - '8088:8088'
